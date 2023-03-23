@@ -1,15 +1,18 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:task_4/models/gift_card.dart';
+import 'package:task_4/models/gift_card_order.dart';
 import 'package:task_4/shared/app_colors.dart';
 import 'package:task_4/views/full_gift_card/full_gift_card.dart';
 
 class GiftCardPreview extends StatelessWidget {
   final GiftCard giftCard;
+  final Function(GiftCardOrder item) addItem;
 
   const GiftCardPreview({
     super.key,
     required this.giftCard,
+    required this.addItem,
   });
 
   @override
@@ -21,6 +24,7 @@ class GiftCardPreview extends StatelessWidget {
           MaterialPageRoute(
             builder: (context) => FullGiftCard(
               giftCard: giftCard,
+              addItem: addItem,
             ),
           ),
         );

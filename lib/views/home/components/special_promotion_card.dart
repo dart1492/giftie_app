@@ -20,7 +20,9 @@ class SpecialPromotionCard extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Image.asset('assets/new_year_image.jpeg'),
+          Image.asset(
+            'assets/new_year_image.jpeg',
+          ),
           Expanded(
             child: Container(
               alignment: Alignment.center,

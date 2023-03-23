@@ -1,24 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:task_4/models/gift_card.dart';
+import 'package:task_4/models/gift_card_order.dart';
 import 'package:task_4/views/home/components/bestsellers_label_row.dart';
 import 'package:task_4/views/home/components/special_promotion_card.dart';
 import 'package:task_4/views/home/components/special_promotions_label_row.dart';
 import 'package:task_4/views/home/components/gift_card_preview.dart';
 import 'package:task_4/views/home/components/search_field.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class Home extends StatelessWidget {
+  final Function(GiftCardOrder item) addItem;
+  const Home({
+    super.key,
+    required this.addItem,
+  });
 
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  List<GiftCard> giftCards = [];
-
-  @override
-  void initState() {
+  List<GiftCard> generateCards() {
+    List<GiftCard> giftCards = [];
     giftCards.add(
       GiftCard(
         name: "Netflix",
@@ -52,11 +50,13 @@ class _HomeState extends State<Home> {
           priceList: [25, 50, 250]),
     );
 
-    super.initState();
+    return giftCards;
   }
 
   @override
   Widget build(BuildContext context) {
+    final giftCards = generateCards();
+
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: Column(
@@ -80,9 +80,11 @@ class _HomeState extends State<Home> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       GiftCardPreview(
+                        addItem: addItem,
                         giftCard: giftCards.first,
                       ),
                       GiftCardPreview(
+                        addItem: addItem,
                         giftCard: giftCards[1],
                       ),
                     ],
@@ -94,9 +96,11 @@ class _HomeState extends State<Home> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       GiftCardPreview(
+                        addItem: addItem,
                         giftCard: giftCards[2],
                       ),
                       GiftCardPreview(
+                        addItem: addItem,
                         giftCard: giftCards[3],
                       ),
                     ],

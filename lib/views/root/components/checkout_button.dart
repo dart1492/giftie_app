@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:task_4/models/gift_card_order.dart';
 import 'package:task_4/shared/app_colors.dart';
 import 'package:task_4/views/checkout/checkout.dart';
 
 class CheckoutButton extends StatelessWidget {
-  const CheckoutButton({super.key});
+  final List<GiftCardOrder> checkoutCart;
+  final Function(int index) deleteItem;
+  const CheckoutButton({
+    super.key,
+    required this.checkoutCart,
+    required this.deleteItem,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +29,10 @@ class CheckoutButton extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const Checkout(),
+            builder: (context) => Checkout(
+              checkoutCart: checkoutCart,
+              deleteItem: deleteItem,
+            ),
           ),
         );
       },

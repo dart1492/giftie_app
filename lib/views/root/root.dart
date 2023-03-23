@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_4/models/gift_card_order.dart';
 import 'package:task_4/shared/app_colors.dart';
 import 'package:task_4/views/home/home.dart';
 import 'package:task_4/views/root/components/checkout_button.dart';
@@ -15,6 +16,19 @@ class Root extends StatefulWidget {
 class _RootState extends State<Root> with SingleTickerProviderStateMixin {
   late TabController tabController;
   int selectedNavBarIndex = 0;
+  List<GiftCardOrder> shoppingCart = [];
+
+  addItem(GiftCardOrder item) {
+    setState(() {
+      shoppingCart.add(item);
+    });
+  }
+
+  deleteItem(int index) {
+    setState(() {
+      shoppingCart.removeAt(index);
+    });
+  }
 
   @override
   void initState() {
@@ -35,7 +49,10 @@ class _RootState extends State<Root> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: const CheckoutButton(),
+      floatingActionButton: CheckoutButton(
+        deleteItem: deleteItem,
+        checkoutCart: shoppingCart,
+      ),
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.lightWhiteGreen,
       drawer: const Drawer(
@@ -54,11 +71,10 @@ class _RootState extends State<Root> with SingleTickerProviderStateMixin {
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (value) {
+          tabController.animateTo(value);
           setState(() {
             selectedNavBarIndex = value;
           });
-
-          tabController.animateTo(value);
         },
         currentIndex: selectedNavBarIndex,
         backgroundColor: AppColors.plainWhite,
@@ -84,7 +100,12 @@ class _RootState extends State<Root> with SingleTickerProviderStateMixin {
       ),
       body: TabBarView(
         controller: tabController,
-        children: const [Home(), Settings()],
+        children: [
+          Home(
+            addItem: addItem,
+          ),
+          const Settings()
+        ],
       ),
     );
   }

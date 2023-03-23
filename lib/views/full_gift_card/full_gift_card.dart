@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_4/models/gift_card.dart';
+import 'package:task_4/models/gift_card_order.dart';
 import 'package:task_4/shared/app_colors.dart';
 import 'package:task_4/views/full_gift_card/components/choose_amount_label.dart';
 import 'package:task_4/views/full_gift_card/components/choose_design_label.dart';
@@ -12,7 +13,12 @@ import 'package:task_4/views/full_gift_card/components/title_text.dart';
 
 class FullGiftCard extends StatelessWidget {
   final GiftCard giftCard;
-  const FullGiftCard({super.key, required this.giftCard});
+  final Function(GiftCardOrder item) addItem;
+  const FullGiftCard({
+    super.key,
+    required this.giftCard,
+    required this.addItem,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +49,10 @@ class FullGiftCard extends StatelessWidget {
               ),
               const ChooseDesignLabel(),
               const ColorsRow(),
-              const SelectCardButton(),
+              SelectCardButton(
+                giftCard: giftCard,
+                addItem: addItem,
+              ),
             ],
           ),
         ),

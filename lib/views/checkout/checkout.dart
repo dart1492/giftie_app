@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:task_4/models/gift_card_order.dart';
 import 'package:task_4/shared/app_colors.dart';
 import 'package:task_4/views/checkout/components/done_button.dart';
 import 'package:task_4/views/checkout/components/order_list.dart';
 
 class Checkout extends StatelessWidget {
-  const Checkout({super.key});
+  final List<GiftCardOrder> checkoutCart;
+  final Function(int index) deleteItem;
+  const Checkout({
+    super.key,
+    required this.checkoutCart,
+    required this.deleteItem,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +40,14 @@ class Checkout extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
           child: Column(
-            children: const [
+            children: [
               Expanded(
-                child: OrderList(),
+                child: OrderList(
+                  deleteItem: deleteItem,
+                  checkoutCart: checkoutCart,
+                ),
               ),
-              DoneButton(),
+              const DoneButton(),
             ],
           ),
         ),
