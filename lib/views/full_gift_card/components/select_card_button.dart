@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:task_4/models/gift_card.dart';
-import 'package:task_4/models/gift_card_order.dart';
-import 'package:task_4/shared/app_colors.dart';
+import 'package:provider/provider.dart';
+import 'package:giftie_app/models/gift_card.dart';
+import 'package:giftie_app/models/gift_card_order.dart';
+import 'package:giftie_app/models/shopping_cart.dart';
+import 'package:giftie_app/shared/app_colors.dart';
 
 class SelectCardButton extends StatelessWidget {
-  final Function(GiftCardOrder item) addItem;
   final GiftCard giftCard;
   const SelectCardButton({
     super.key,
-    required this.addItem,
     required this.giftCard,
   });
 
@@ -16,16 +16,19 @@ class SelectCardButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        addItem(
-          GiftCardOrder(
-            amount: 25,
-            color: "Blue",
-            serviceName: giftCard.name,
-            imagePath: giftCard.assetImagePath,
-          ),
-        );
-
-        Navigator.pop(context);
+        final order = Provider.of<GiftCardOrder>(context, listen: false);
+        if (order.amount == null || order.color == null) {
+          showDialog(
+            context: context,
+            builder: (context) => const AlertDialog(
+              title: Text("Warning"),
+              content: Text("Choose color and amount"),
+            ),
+          );
+        } else {
+          Provider.of<ShoppingCart>(context, listen: false).addOrder(order);
+          Navigator.pop(context);
+        }
       },
       child: Container(
         height: 50,
@@ -50,13 +53,17 @@ class SelectCardButton extends StatelessWidget {
                   color: AppColors.plainWhite,
                 ),
                 alignment: Alignment.center,
-                child: Text(
-                  "\$25",
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyLarge
-                      ?.copyWith(fontWeight: FontWeight.bold, fontSize: 20),
-                ),
+                child:
+                    Consumer<GiftCardOrder>(builder: (context, value, child) {
+                  String amount = value.amount?.toString() ?? '';
+                  return Text(
+                    "\$$amount",
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyLarge
+                        ?.copyWith(fontWeight: FontWeight.bold, fontSize: 20),
+                  );
+                }),
               ),
             ),
           ),

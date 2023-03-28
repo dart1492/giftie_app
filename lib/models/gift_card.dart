@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class GiftCard {
   /// Name of the service, company (like Netflix, PlayStation, etc. )
   String name;
@@ -9,6 +11,9 @@ class GiftCard {
   /// available prices of this particular gift card - 50, 100, 250, etc.
   List<int> priceList;
 
+  /// Available color for this card
+  List<Color> availableColors;
+
   /// Shortdescription of this giftcard
   String description;
 
@@ -17,5 +22,6 @@ class GiftCard {
     required this.assetImagePath,
     required this.priceList,
     required this.description,
+    required this.availableColors,
   });
 }

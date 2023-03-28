@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_4/shared/app_colors.dart';
+import 'package:giftie_app/shared/app_colors.dart';
 
 /// Button, that animated shadow when clicked.
 /// Has default height and width of 50, which is a bit of a stretch,
@@ -13,6 +13,10 @@ class AnimatedChoiceButton extends StatefulWidget {
 
   final double? width;
 
+  final bool isSelected;
+
+  final void Function() onTap;
+
   /// Button, that animated shadow when clicked.
   /// Has default height and width of 50, which is a bit of a stretch,
   /// but is acceptable in this test application
@@ -22,6 +26,8 @@ class AnimatedChoiceButton extends StatefulWidget {
     this.child,
     this.height,
     this.width,
+    required this.isSelected,
+    required this.onTap,
   });
 
   @override
@@ -29,24 +35,20 @@ class AnimatedChoiceButton extends StatefulWidget {
 }
 
 class _AnimatedChoiceButtonState extends State<AnimatedChoiceButton> {
-  bool isSelected = false;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        setState(() {
-          isSelected = !isSelected;
-        });
-      },
+      onTap: widget.onTap,
       child: AnimatedContainer(
         alignment: Alignment.center,
         duration: const Duration(milliseconds: 300),
-        height: widget.height ?? 50,
-        width: widget.width ?? 50,
+        height: widget.height,
+        width: widget.width,
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              offset: Offset(!isSelected ? 0 : 2, !isSelected ? 0 : 4),
+              offset: Offset(
+                  !widget.isSelected ? 0 : 2, !widget.isSelected ? 0 : 4),
             )
           ],
           color: widget.color ?? AppColors.plainWhite,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:task_4/shared/app_colors.dart';
-import 'package:task_4/shared/app_constants.dart';
-import 'package:task_4/views/root/components/nav_drawer_custom_item.dart';
+import 'package:giftie_app/shared/app_colors.dart';
+import 'package:giftie_app/shared/app_constants.dart';
+import 'package:giftie_app/views/root/components/nav_drawer_custom_item.dart';
 
 class NavigationDrawerContent extends StatelessWidget {
   const NavigationDrawerContent({

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:task_4/models/gift_card_order.dart';
-import 'package:task_4/shared/app_colors.dart';
-import 'package:task_4/views/home/home.dart';
-import 'package:task_4/views/root/components/checkout_button.dart';
-import 'package:task_4/views/root/components/navigation_drawer_content.dart';
-import 'package:task_4/views/settings/settings.dart';
+import 'package:giftie_app/shared/app_colors.dart';
+import 'package:giftie_app/views/home/home.dart';
+import 'package:giftie_app/views/root/components/checkout_button.dart';
+import 'package:giftie_app/views/root/components/navigation_drawer_content.dart';
+import 'package:giftie_app/views/settings/settings.dart';
 
 class Root extends StatefulWidget {
   const Root({super.key});
@@ -16,19 +15,6 @@ class Root extends StatefulWidget {
 class _RootState extends State<Root> with SingleTickerProviderStateMixin {
   late TabController tabController;
   int selectedNavBarIndex = 0;
-  List<GiftCardOrder> shoppingCart = [];
-
-  addItem(GiftCardOrder item) {
-    setState(() {
-      shoppingCart.add(item);
-    });
-  }
-
-  deleteItem(int index) {
-    setState(() {
-      shoppingCart.removeAt(index);
-    });
-  }
 
   @override
   void initState() {
@@ -49,10 +35,7 @@ class _RootState extends State<Root> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: CheckoutButton(
-        deleteItem: deleteItem,
-        checkoutCart: shoppingCart,
-      ),
+      floatingActionButton: const CheckoutButton(),
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.lightWhiteGreen,
       drawer: const Drawer(
@@ -99,13 +82,9 @@ class _RootState extends State<Root> with SingleTickerProviderStateMixin {
         ],
       ),
       body: TabBarView(
+        physics: const NeverScrollableScrollPhysics(),
         controller: tabController,
-        children: [
-          Home(
-            addItem: addItem,
-          ),
-          const Settings()
-        ],
+        children: const [Home(), Settings()],
       ),
     );
   }

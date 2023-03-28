@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_4/shared/app_colors.dart';
+import 'package:giftie_app/shared/app_colors.dart';
 
 class SpecialPromotionCard extends StatelessWidget {
   const SpecialPromotionCard({

@@ -1,16 +1,28 @@
-class GiftCardOrder {
+import 'package:flutter/material.dart';
+
+class GiftCardOrder extends ChangeNotifier {
   String serviceName;
 
-  int amount;
+  int? amount;
 
-  String color;
+  Color? color;
 
   String imagePath;
 
   GiftCardOrder({
-    required this.amount,
-    required this.color,
+    this.amount,
+    this.color,
     required this.serviceName,
     required this.imagePath,
   });
+
+  void updateColor(Color newColor) {
+    color = newColor;
+    notifyListeners();
+  }
+
+  void updateAmount(int newPrice) {
+    amount = newPrice;
+    notifyListeners();
+  }
 }
