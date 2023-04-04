@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:giftie_app/shared/app_colors.dart';
+import 'package:giftie_app/shared/theme/custom_color_scheme/app_color_scheme.dart';
 
 /// Button, that animated shadow when clicked.
 /// Has default height and width of 50, which is a bit of a stretch,
@@ -37,6 +38,8 @@ class AnimatedChoiceButton extends StatefulWidget {
 class _AnimatedChoiceButtonState extends State<AnimatedChoiceButton> {
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColorScheme>()!;
+
     return GestureDetector(
       onTap: widget.onTap,
       child: AnimatedContainer(
@@ -47,13 +50,16 @@ class _AnimatedChoiceButtonState extends State<AnimatedChoiceButton> {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
+              color: colors.secondary,
               offset: Offset(
-                  !widget.isSelected ? 0 : 2, !widget.isSelected ? 0 : 4),
+                !widget.isSelected ? 0 : 2,
+                !widget.isSelected ? 0 : 4,
+              ),
             )
           ],
           color: widget.color ?? AppColors.plainWhite,
           border: Border.all(
-            color: AppColors.plainBlack,
+            color: colors.secondary,
             width: 2,
           ),
           borderRadius: BorderRadius.circular(10),

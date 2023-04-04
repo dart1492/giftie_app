@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:giftie_app/shared/app_colors.dart';
+import 'package:giftie_app/shared/theme/custom_color_scheme/app_color_scheme.dart';
 import 'package:giftie_app/views/checkout/components/done_button.dart';
 import 'package:giftie_app/views/checkout/components/order_list.dart';
 
@@ -10,17 +10,20 @@ class Checkout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColorScheme>()!;
+
     return Scaffold(
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
         backgroundColor: Colors.transparent,
         elevation: 0,
+        foregroundColor: colors.textMain,
         title: Text(
           "Checkout",
-          style: Theme.of(context)
-              .textTheme
-              .headlineSmall
-              ?.copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                fontWeight: FontWeight.bold,
+                color: colors.textMain,
+              ),
         ),
         actions: [
           Hero(
@@ -31,7 +34,7 @@ class Checkout extends StatelessWidget {
           ),
         ],
       ),
-      backgroundColor: AppColors.lightWhiteGreen,
+      backgroundColor: colors.background,
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),

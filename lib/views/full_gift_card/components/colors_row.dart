@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:giftie_app/models/gift_card_order.dart';
+import 'package:giftie_app/providers/gift_card_order.dart';
 import 'package:giftie_app/views/full_gift_card/components/animated_choice_button.dart';
 
 class ColorsRow extends StatelessWidget {

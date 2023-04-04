@@ -23,7 +23,7 @@ class NavDrawerCustomItem extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: AppColors.greenBlueGradient,
           borderRadius: BorderRadius.circular(15),
-          border: Border.all(color: AppColors.plainBlack),
+          // border: Border.all(color: AppColors.plainBlack),
         ),
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
         child: Row(children: [

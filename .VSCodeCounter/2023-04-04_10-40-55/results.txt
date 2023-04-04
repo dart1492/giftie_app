@@ -1,0 +1,85 @@
+Date : 2023-04-04 10:40:55
+Directory : d:\Development\empat_school\giftie_app\lib
+Total : 39 files,  1691 codes, 65 comments, 187 blanks, all 1943 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Dart     |         39 |      1,691 |         65 |        187 |      1,943 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                   | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                      |         39 |      1,691 |         65 |        187 |      1,943 |
+| . (Files)                                                                                              |          2 |         45 |          0 |          6 |         51 |
+| models                                                                                                 |          1 |         15 |          6 |          7 |         28 |
+| providers                                                                                              |          3 |         45 |          0 |         16 |         61 |
+| shared                                                                                                 |          9 |        220 |          5 |         41 |        266 |
+| shared (Files)                                                                                         |          2 |         17 |          0 |         11 |         28 |
+| shared\theme                                                                                           |          7 |        203 |          5 |         30 |        238 |
+| shared\theme (Files)                                                                                   |          2 |         30 |          0 |          4 |         34 |
+| shared\theme\custom_color_scheme                                                                       |          5 |        173 |          5 |         26 |        204 |
+| views                                                                                                  |         24 |      1,366 |         54 |        117 |      1,537 |
+| views\checkout                                                                                         |          3 |        175 |          0 |         14 |        189 |
+| views\checkout (Files)                                                                                 |          1 |         54 |          0 |          4 |         58 |
+| views\checkout\components                                                                              |          2 |        121 |          0 |         10 |        131 |
+| views\full_gift_card                                                                                   |         10 |        447 |         53 |         51 |        551 |
+| views\full_gift_card (Files)                                                                           |          1 |         68 |          0 |          5 |         73 |
+| views\full_gift_card\components                                                                        |          9 |        379 |         53 |         46 |        478 |
+| views\home                                                                                             |          6 |        471 |          0 |         30 |        501 |
+| views\home (Files)                                                                                     |          1 |        129 |          0 |          8 |        137 |
+| views\home\components                                                                                  |          5 |        342 |          0 |         22 |        364 |
+| views\root                                                                                             |          4 |        265 |          1 |         19 |        285 |
+| views\root (Files)                                                                                     |          1 |         99 |          0 |          7 |        106 |
+| views\root\components                                                                                  |          3 |        166 |          1 |         12 |        179 |
+| views\settings                                                                                         |          1 |          8 |          0 |          3 |         11 |
++--------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                               | language | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| d:\Development\empat_school\giftie_app\lib\app.dart                                                    | Dart     |         38 |          0 |          4 |         42 |
+| d:\Development\empat_school\giftie_app\lib\main.dart                                                   | Dart     |          7 |          0 |          2 |          9 |
+| d:\Development\empat_school\giftie_app\lib\models\gift_card.dart                                       | Dart     |         15 |          6 |          7 |         28 |
+| d:\Development\empat_school\giftie_app\lib\providers\gift_card_order.dart                              | Dart     |         21 |          0 |          8 |         29 |
+| d:\Development\empat_school\giftie_app\lib\providers\shopping_cart.dart                                | Dart     |         12 |          0 |          4 |         16 |
+| d:\Development\empat_school\giftie_app\lib\providers\theme_provider_model.dart                         | Dart     |         12 |          0 |          4 |         16 |
+| d:\Development\empat_school\giftie_app\lib\shared\app_colors.dart                                      | Dart     |         14 |          0 |         10 |         24 |
+| d:\Development\empat_school\giftie_app\lib\shared\app_constants.dart                                   | Dart     |          3 |          0 |          1 |          4 |
+| d:\Development\empat_school\giftie_app\lib\shared\theme\custom_color_scheme\accents.dart               | Dart     |         41 |          1 |          7 |         49 |
+| d:\Development\empat_school\giftie_app\lib\shared\theme\custom_color_scheme\app_color_scheme.dart      | Dart     |         73 |          1 |          5 |         79 |
+| d:\Development\empat_school\giftie_app\lib\shared\theme\custom_color_scheme\backgrounds.dart           | Dart     |         22 |          1 |          3 |         26 |
+| d:\Development\empat_school\giftie_app\lib\shared\theme\custom_color_scheme\components.dart            | Dart     |         22 |          1 |          7 |         30 |
+| d:\Development\empat_school\giftie_app\lib\shared\theme\custom_color_scheme\fonts.dart                 | Dart     |         15 |          1 |          4 |         20 |
+| d:\Development\empat_school\giftie_app\lib\shared\theme\dark_theme.dart                                | Dart     |         15 |          0 |          2 |         17 |
+| d:\Development\empat_school\giftie_app\lib\shared\theme\light_theme.dart                               | Dart     |         15 |          0 |          2 |         17 |
+| d:\Development\empat_school\giftie_app\lib\views\checkout\checkout.dart                                | Dart     |         54 |          0 |          4 |         58 |
+| d:\Development\empat_school\giftie_app\lib\views\checkout\components\done_button.dart                  | Dart     |         51 |          0 |          5 |         56 |
+| d:\Development\empat_school\giftie_app\lib\views\checkout\components\order_list.dart                   | Dart     |         70 |          0 |          5 |         75 |
+| d:\Development\empat_school\giftie_app\lib\views\full_gift_card\components\animated_choice_button.dart | Dart     |         55 |          6 |         11 |         72 |
+| d:\Development\empat_school\giftie_app\lib\views\full_gift_card\components\choose_amount_label.dart    | Dart     |         22 |          0 |          4 |         26 |
+| d:\Development\empat_school\giftie_app\lib\views\full_gift_card\components\choose_design_label.dart    | Dart     |         21 |          0 |          4 |         25 |
+| d:\Development\empat_school\giftie_app\lib\views\full_gift_card\components\colors_row.dart             | Dart     |         42 |          4 |          3 |         49 |
+| d:\Development\empat_school\giftie_app\lib\views\full_gift_card\components\description_text.dart       | Dart     |         41 |          0 |          6 |         47 |
+| d:\Development\empat_school\giftie_app\lib\views\full_gift_card\components\logo_image.dart             | Dart     |         30 |          0 |          4 |         34 |
+| d:\Development\empat_school\giftie_app\lib\views\full_gift_card\components\prices_row.dart             | Dart     |         51 |         43 |          6 |        100 |
+| d:\Development\empat_school\giftie_app\lib\views\full_gift_card\components\select_card_button.dart     | Dart     |         95 |          0 |          4 |         99 |
+| d:\Development\empat_school\giftie_app\lib\views\full_gift_card\components\title_text.dart             | Dart     |         22 |          0 |          4 |         26 |
+| d:\Development\empat_school\giftie_app\lib\views\full_gift_card\full_gift_card.dart                    | Dart     |         68 |          0 |          5 |         73 |
+| d:\Development\empat_school\giftie_app\lib\views\home\components\bestsellers_label_row.dart            | Dart     |         41 |          0 |          4 |         45 |
+| d:\Development\empat_school\giftie_app\lib\views\home\components\gift_card_preview.dart                | Dart     |         93 |          0 |          5 |         98 |
+| d:\Development\empat_school\giftie_app\lib\views\home\components\search_field.dart                     | Dart     |        105 |          0 |          6 |        111 |
+| d:\Development\empat_school\giftie_app\lib\views\home\components\special_promotion_card.dart           | Dart     |         44 |          0 |          3 |         47 |
+| d:\Development\empat_school\giftie_app\lib\views\home\components\special_promotions_label_row.dart     | Dart     |         59 |          0 |          4 |         63 |
+| d:\Development\empat_school\giftie_app\lib\views\home\home.dart                                        | Dart     |        129 |          0 |          8 |        137 |
+| d:\Development\empat_school\giftie_app\lib\views\root\components\checkout_button.dart                  | Dart     |         49 |          0 |          3 |         52 |
+| d:\Development\empat_school\giftie_app\lib\views\root\components\nav_drawer_custom_item.dart           | Dart     |         33 |          1 |          6 |         40 |
+| d:\Development\empat_school\giftie_app\lib\views\root\components\navigation_drawer_content.dart        | Dart     |         84 |          0 |          3 |         87 |
+| d:\Development\empat_school\giftie_app\lib\views\root\root.dart                                        | Dart     |         99 |          0 |          7 |        106 |
+| d:\Development\empat_school\giftie_app\lib\views\settings\settings.dart                                | Dart     |          8 |          0 |          3 |         11 |
+| Total                                                                                                  |          |      1,691 |         65 |        187 |      1,943 |
++--------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

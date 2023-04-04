@@ -21,7 +21,7 @@ class Home extends StatelessWidget {
         assetImagePath: 'assets/netflix_logo.png',
         priceList: [25, 50, 100],
         description:
-            "Netflix gift card can be redeemed for a prepaid subscription to a library of movies and shows. All streamable ad-free and to any device with the Netfix app",
+            "Netflix gift card can be redeemed for a prepaid subscription to a library of movies and shows. All streamable ad-free and to any device with the Netflix app",
         availableColors: [
           AppColors.lightRed,
           AppColors.plainWhite,

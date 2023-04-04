@@ -1,8 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:giftie_app/models/gift_card.dart';
-import 'package:giftie_app/models/gift_card_order.dart';
 import 'package:giftie_app/shared/app_colors.dart';
+import 'package:giftie_app/shared/theme/custom_color_scheme/app_color_scheme.dart';
 import 'package:giftie_app/views/full_gift_card/full_gift_card.dart';
 
 class GiftCardPreview extends StatelessWidget {
@@ -15,6 +15,8 @@ class GiftCardPreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColorScheme>()!;
+
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -33,7 +35,8 @@ class GiftCardPreview extends StatelessWidget {
           color: AppColors.plainWhite,
           borderRadius: BorderRadius.circular(5),
           border: Border.all(
-            color: AppColors.plainBlack,
+            color: colors.secondary,
+            width: 1.5,
           ),
         ),
         child: Column(children: [

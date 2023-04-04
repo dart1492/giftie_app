@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:giftie_app/shared/app_colors.dart';
+import 'package:giftie_app/providers/theme_provider_model.dart';
+import 'package:giftie_app/shared/theme/custom_color_scheme/app_color_scheme.dart';
 import 'package:giftie_app/views/home/home.dart';
 import 'package:giftie_app/views/root/components/checkout_button.dart';
-import 'package:giftie_app/views/root/components/navigation_drawer_content.dart';
-import 'package:giftie_app/views/settings/settings.dart';
+import 'package:giftie_app/views/riddles/riddles.dart';
+import 'package:provider/provider.dart';
 
 class Root extends StatefulWidget {
   const Root({super.key});
@@ -33,15 +34,26 @@ class _RootState extends State<Root> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColorScheme>()!;
+
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: const CheckoutButton(),
       resizeToAvoidBottomInset: false,
-      backgroundColor: AppColors.lightWhiteGreen,
-      drawer: const Drawer(
-        child: NavigationDrawerContent(),
-      ),
+      backgroundColor: colors.background,
       appBar: AppBar(
+        leading: Consumer<ThemeProvider>(
+          builder: (context, value, child) {
+            return IconButton(
+              icon: Icon(
+                value.isDarkTheme ? Icons.sunny : Icons.nightlight,
+              ),
+              onPressed: () {
+                value.switchTheme();
+              },
+            );
+          },
+        ),
         actions: [
           Container(
             margin: const EdgeInsets.only(right: 15),
@@ -49,7 +61,7 @@ class _RootState extends State<Root> with SingleTickerProviderStateMixin {
           )
         ],
         backgroundColor: Colors.transparent,
-        foregroundColor: AppColors.plainBlack,
+        foregroundColor: colors.textMain,
         elevation: 0,
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -60,15 +72,17 @@ class _RootState extends State<Root> with SingleTickerProviderStateMixin {
           });
         },
         currentIndex: selectedNavBarIndex,
-        backgroundColor: AppColors.plainWhite,
+        backgroundColor: colors.background,
         elevation: 0,
         iconSize: 25,
-        selectedItemColor: AppColors.plainBlack,
-        selectedLabelStyle: Theme.of(context).textTheme.titleMedium?.copyWith(
-            fontWeight: FontWeight.bold, color: AppColors.plainBlack),
+        selectedItemColor: colors.textMain,
+        selectedLabelStyle: Theme.of(context)
+            .textTheme
+            .titleMedium
+            ?.copyWith(fontWeight: FontWeight.bold, color: colors.textMain),
         unselectedLabelStyle: Theme.of(context).textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.bold,
-              color: AppColors.plainBlack,
+              color: colors.textMain,
             ),
         items: const [
           BottomNavigationBarItem(
@@ -76,8 +90,8 @@ class _RootState extends State<Root> with SingleTickerProviderStateMixin {
             icon: Icon(Icons.home_outlined),
           ),
           BottomNavigationBarItem(
-            label: "Settings",
-            icon: Icon(Icons.settings),
+            label: "Riddles",
+            icon: Icon(Icons.question_mark),
           )
         ],
       ),

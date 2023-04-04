@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:giftie_app/shared/theme/custom_color_scheme/app_color_scheme.dart';
 import 'package:provider/provider.dart';
 import 'package:giftie_app/models/gift_card.dart';
-import 'package:giftie_app/models/gift_card_order.dart';
-import 'package:giftie_app/models/shopping_cart.dart';
+import 'package:giftie_app/providers/gift_card_order.dart';
+import 'package:giftie_app/providers/shopping_cart.dart';
 import 'package:giftie_app/shared/app_colors.dart';
 
 class SelectCardButton extends StatelessWidget {
@@ -14,6 +15,8 @@ class SelectCardButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColorScheme>()!;
+
     return GestureDetector(
       onTap: () {
         final order = Provider.of<GiftCardOrder>(context, listen: false);
@@ -39,7 +42,7 @@ class SelectCardButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
             width: 2,
-            color: Colors.black,
+            color: colors.secondary,
           ),
           color: AppColors.plainWhite,
         ),

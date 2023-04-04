@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:giftie_app/shared/app_colors.dart';
+import 'package:giftie_app/shared/theme/custom_color_scheme/app_color_scheme.dart';
 
 class SpecialPromotionCard extends StatelessWidget {
   const SpecialPromotionCard({
@@ -8,14 +9,17 @@ class SpecialPromotionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColorScheme>()!;
     return Container(
       height: 250,
       width: double.infinity,
       margin: const EdgeInsets.only(top: 20),
       decoration: BoxDecoration(
-        boxShadow: const [BoxShadow(offset: Offset(4, 4))],
+        boxShadow: [
+          BoxShadow(offset: const Offset(4, 4), color: colors.secondary)
+        ],
         color: AppColors.plainWhite,
-        border: Border.all(color: AppColors.plainBlack, width: 2),
+        border: Border.all(color: colors.secondary, width: 2),
         borderRadius: BorderRadius.circular(5),
       ),
       child: Column(

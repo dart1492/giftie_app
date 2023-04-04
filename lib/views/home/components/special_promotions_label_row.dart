@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:giftie_app/shared/app_colors.dart';
+import 'package:giftie_app/shared/theme/custom_color_scheme/app_color_scheme.dart';
 
 class SpecialPromotionsLabelRow extends StatelessWidget {
   const SpecialPromotionsLabelRow({
@@ -8,14 +9,16 @@ class SpecialPromotionsLabelRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<AppColorScheme>()!;
+
     return Row(
       children: [
         Text(
           "Special Pormotions",
-          style: Theme.of(context)
-              .textTheme
-              .headlineSmall
-              ?.copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                fontWeight: FontWeight.bold,
+                color: colors.textMain,
+              ),
         ),
         const Expanded(
           child: SizedBox(),
@@ -25,7 +28,7 @@ class SpecialPromotionsLabelRow extends StatelessWidget {
           height: 5,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
-            color: AppColors.plainBlack,
+            color: colors.textMain,
           ),
         ),
         const SizedBox(

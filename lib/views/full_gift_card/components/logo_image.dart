@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:giftie_app/models/gift_card_order.dart';
+import 'package:giftie_app/providers/gift_card_order.dart';
 import 'package:giftie_app/shared/app_colors.dart';
 
 class LogoImage extends StatelessWidget {

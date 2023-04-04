@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:giftie_app/models/gift_card_order.dart';
+import 'package:giftie_app/providers/gift_card_order.dart';
 
 class ShoppingCart extends ChangeNotifier {
   List<GiftCardOrder> orders = [];
