@@ -15,7 +15,7 @@ class Settings extends StatelessWidget {
       create: (context) => RiddleSectionProvider()..getNewRiddle(),
       child: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
               Text(
@@ -23,9 +23,6 @@ class Settings extends StatelessWidget {
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                       color: colors.textMain,
                     ),
-              ),
-              const SizedBox(
-                height: 20,
               ),
               const SizedBox(
                 height: 20,
