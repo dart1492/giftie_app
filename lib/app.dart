@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:giftie_app/providers/theme_provider_model.dart';
+import 'package:giftie_app/routes/router.dart';
 import 'package:giftie_app/shared/theme/light_theme.dart';
 import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
 import 'package:giftie_app/providers/shopping_cart.dart';
-import 'package:giftie_app/views/root/root.dart';
 
 import 'shared/theme/dark_theme.dart';
 
 class App extends StatelessWidget {
-  const App({super.key});
+  App({super.key});
+
+  final _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +26,8 @@ class App extends StatelessWidget {
                   ThemeProvider(snapshot.data!.get('theme') ?? false),
               child: Consumer<ThemeProvider>(
                 builder: (context, value, child) {
-                  return MaterialApp(
-                    home: const Root(),
+                  return MaterialApp.router(
+                    routerConfig: _appRouter.config(),
                     theme: !value.isDarkTheme ? darkTheme : lightTheme,
                   );
                 },

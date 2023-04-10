@@ -20,10 +20,9 @@ class NavigationDrawerContent extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Text(
                 "What to do?",
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineSmall
-                    ?.copyWith(fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
             ),
             const SizedBox(
@@ -32,10 +31,9 @@ class NavigationDrawerContent extends StatelessWidget {
             NavDrawerCustomItem(
               title: Text(
                 "Home",
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium
-                    ?.copyWith(fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
               trailing: const Icon(Icons.home_outlined),
             ),

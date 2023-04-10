@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:giftie_app/models/gift_card.dart';
 import 'package:giftie_app/shared/app_colors.dart';
@@ -8,8 +8,9 @@ import 'package:giftie_app/views/home/components/special_promotions_label_row.da
 import 'package:giftie_app/views/home/components/gift_card_preview.dart';
 import 'package:giftie_app/views/home/components/search_field.dart';
 
-class Home extends StatelessWidget {
-  const Home({
+@RoutePage(name: 'home')
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({
     super.key,
   });
 

@@ -30,7 +30,8 @@ class SelectCardButton extends StatelessWidget {
           );
         } else {
           Provider.of<ShoppingCart>(context, listen: false).addOrder(order);
-          Navigator.pop(context);
+          // True because the order was added to the cart
+          Navigator.pop(context, true);
         }
       },
       child: Container(

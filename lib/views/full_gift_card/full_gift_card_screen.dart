@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:giftie_app/shared/theme/custom_color_scheme/app_color_scheme.dart';
 import 'package:provider/provider.dart';
@@ -12,10 +13,11 @@ import 'package:giftie_app/views/full_gift_card/components/prices_row.dart';
 import 'package:giftie_app/views/full_gift_card/components/select_card_button.dart';
 import 'package:giftie_app/views/full_gift_card/components/title_text.dart';
 
-class FullGiftCard extends StatelessWidget {
+@RoutePage<bool>(name: 'full_gift_card')
+class FullGiftCardScreen extends StatelessWidget {
   final GiftCard giftCard;
 
-  const FullGiftCard({
+  const FullGiftCardScreen({
     super.key,
     required this.giftCard,
   });
@@ -32,6 +34,13 @@ class FullGiftCard extends StatelessWidget {
       child: Scaffold(
         backgroundColor: colors.background,
         appBar: AppBar(
+          leading: GestureDetector(
+            onTap: () {
+              // Returns false because the user dropped the order
+              Navigator.pop<bool>(context, false);
+            },
+            child: const Icon(Icons.arrow_back_ios),
+          ),
           foregroundColor: colors.textMain,
           toolbarHeight: 30,
           backgroundColor: Colors.transparent,
@@ -45,6 +54,9 @@ class FullGiftCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const TitleText(),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   LogoImage(
                     logoImagePath: giftCard.assetImagePath,
                   ),
@@ -77,6 +89,9 @@ class FullGiftCard extends StatelessWidget {
                   ),
                   SelectCardButton(
                     giftCard: giftCard,
+                  ),
+                  const SizedBox(
+                    height: 30,
                   ),
                 ],
               ),

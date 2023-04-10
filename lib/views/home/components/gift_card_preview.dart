@@ -1,9 +1,10 @@
 import 'dart:math';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:giftie_app/models/gift_card.dart';
+import 'package:giftie_app/routes/router.gr.dart';
 import 'package:giftie_app/shared/app_colors.dart';
 import 'package:giftie_app/shared/theme/custom_color_scheme/app_color_scheme.dart';
-import 'package:giftie_app/views/full_gift_card/full_gift_card.dart';
 
 class GiftCardPreview extends StatelessWidget {
   final GiftCard giftCard;
@@ -18,15 +19,11 @@ class GiftCardPreview extends StatelessWidget {
     final colors = Theme.of(context).extension<AppColorScheme>()!;
 
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => FullGiftCard(
-              giftCard: giftCard,
-            ),
-          ),
-        );
+      onTap: () async {
+        bool? res = await AutoRouter.of(context)
+            .push<bool>(Full_gift_card(giftCard: giftCard));
+
+        print(res);
       },
       child: Container(
         height: 200,
