@@ -12,7 +12,7 @@ import 'package:auto_route/auto_route.dart' as _i7;
 import 'package:flutter/material.dart' as _i8;
 import 'package:giftie_app/models/gift_card.dart' as _i9;
 import 'package:giftie_app/routes/router.dart' as _i1;
-import 'package:giftie_app/views/checkout/checkout.dart' as _i2;
+import 'package:giftie_app/views/checkout/checkout_screen.dart' as _i2;
 import 'package:giftie_app/views/full_gift_card/full_gift_card_screen.dart'
     as _i3;
 import 'package:giftie_app/views/home/home_screen.dart' as _i4;

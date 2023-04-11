@@ -20,6 +20,8 @@ class GiftCardPreview extends StatelessWidget {
 
     return GestureDetector(
       onTap: () async {
+        // Unfocus the text field on this page
+        WidgetsBinding.instance.focusManager.primaryFocus?.unfocus();
         bool? res = await AutoRouter.of(context)
             .push<bool>(Full_gift_card(giftCard: giftCard));
 

@@ -71,10 +71,10 @@ class _SearchFieldState extends State<SearchField> {
           });
         },
         style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              color: colors.textReversed,
+              color: colors.textMain,
             ),
         textAlignVertical: TextAlignVertical.center,
-        cursorColor: colors.textReversed,
+        cursorColor: colors.textMain,
         decoration: InputDecoration(
           labelStyle: TextStyle(
             fontSize: 20,
@@ -87,7 +87,7 @@ class _SearchFieldState extends State<SearchField> {
           prefixIcon: Icon(
             Icons.search,
             size: 30,
-            color: colors.textReversed,
+            color: colors.textMain,
           ),
           border: OutlineInputBorder(
             borderSide: BorderSide(

@@ -8,7 +8,7 @@ final darkTheme = ThemeData(
       background: const Color(0xFF252525),
       textMain: const Color(0xFFFFFFFF),
       textSecondary: const Color(0xFFB3B3B3),
-      primary: const Color(0xFFFFFFFF),
+      primary: const Color(0xFF252525),
       secondary: const Color(0xFF6A36FF),
       textReversed: const Color(0xFF252525),
     )
