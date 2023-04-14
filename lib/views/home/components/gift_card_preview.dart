@@ -23,7 +23,7 @@ class GiftCardPreview extends StatelessWidget {
         // Unfocus the text field on this page
         WidgetsBinding.instance.focusManager.primaryFocus?.unfocus();
         bool? res = await AutoRouter.of(context)
-            .push<bool>(Full_gift_card(giftCard: giftCard));
+            .push<bool>(FullGiftCardRoute(giftCard: giftCard));
 
         print(res);
       },

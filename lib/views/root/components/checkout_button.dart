@@ -24,7 +24,7 @@ class CheckoutButton extends StatelessWidget {
       backgroundColor: colors.primary,
       splashColor: AppColors.opaqueGrey,
       onPressed: () {
-        AutoRouter.of(context).push(const gr.Checkout());
+        AutoRouter.of(context).push(const gr.CheckoutRoute());
       },
       label: Column(
         mainAxisAlignment: MainAxisAlignment.center,

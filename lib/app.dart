@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:giftie_app/providers/theme_provider_model.dart';
 import 'package:giftie_app/routes/router.dart';
+import 'package:giftie_app/routes/router.gr.dart';
 import 'package:giftie_app/shared/theme/light_theme.dart';
 import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +28,11 @@ class App extends StatelessWidget {
               child: Consumer<ThemeProvider>(
                 builder: (context, value, child) {
                   return MaterialApp.router(
-                    routerConfig: _appRouter.config(),
+                    routerConfig: _appRouter.config(
+                      initialRoutes: [
+                        const WelcomeRoute(),
+                      ],
+                    ),
                     theme: !value.isDarkTheme ? darkTheme : lightTheme,
                   );
                 },

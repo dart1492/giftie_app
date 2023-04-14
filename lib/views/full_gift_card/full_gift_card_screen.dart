@@ -13,7 +13,7 @@ import 'package:giftie_app/views/full_gift_card/components/prices_row.dart';
 import 'package:giftie_app/views/full_gift_card/components/select_card_button.dart';
 import 'package:giftie_app/views/full_gift_card/components/title_text.dart';
 
-@RoutePage<bool>(name: 'full_gift_card')
+@RoutePage<bool>()
 class FullGiftCardScreen extends StatelessWidget {
   final GiftCard giftCard;
 

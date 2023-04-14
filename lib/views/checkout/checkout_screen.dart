@@ -4,7 +4,7 @@ import 'package:giftie_app/shared/theme/custom_color_scheme/app_color_scheme.dar
 import 'package:giftie_app/views/checkout/components/done_button.dart';
 import 'package:giftie_app/views/checkout/components/order_list.dart';
 
-@RoutePage(name: 'checkout')
+@RoutePage()
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({
     super.key,

@@ -8,60 +8,68 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i7;
-import 'package:flutter/material.dart' as _i8;
-import 'package:giftie_app/models/gift_card.dart' as _i9;
+import 'package:auto_route/auto_route.dart' as _i8;
+import 'package:flutter/material.dart' as _i9;
+import 'package:giftie_app/models/gift_card.dart' as _i10;
 import 'package:giftie_app/routes/router.dart' as _i1;
-import 'package:giftie_app/views/checkout/checkout_screen.dart' as _i2;
+import 'package:giftie_app/views/aniamtion_showcase/animation_showcase_screen.dart'
+    as _i2;
+import 'package:giftie_app/views/checkout/checkout_screen.dart' as _i3;
 import 'package:giftie_app/views/full_gift_card/full_gift_card_screen.dart'
-    as _i3;
-import 'package:giftie_app/views/home/home_screen.dart' as _i4;
-import 'package:giftie_app/views/riddles/riddles_screen.dart' as _i5;
-import 'package:giftie_app/views/root/root.dart' as _i6;
+    as _i4;
+import 'package:giftie_app/views/home/home_screen.dart' as _i5;
+import 'package:giftie_app/views/riddles/riddles_screen.dart' as _i6;
+import 'package:giftie_app/views/root/root.dart' as _i7;
 
-abstract class $AppRouter extends _i7.RootStackRouter {
+abstract class $AppRouter extends _i8.RootStackRouter {
   $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i7.PageFactory> pagesMap = {
+  final Map<String, _i8.PageFactory> pagesMap = {
     EmptyHomePage.name: (routeData) {
-      return _i7.AutoRoutePage<dynamic>(
+      return _i8.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i1.EmptyHomePage(),
       );
     },
-    Checkout.name: (routeData) {
-      return _i7.AutoRoutePage<dynamic>(
+    WelcomeRoute.name: (routeData) {
+      return _i8.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i2.CheckoutScreen(),
+        child: const _i2.WelcomeScreen(),
       );
     },
-    Full_gift_card.name: (routeData) {
-      final args = routeData.argsAs<Full_gift_cardArgs>();
-      return _i7.AutoRoutePage<bool>(
+    CheckoutRoute.name: (routeData) {
+      return _i8.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i3.FullGiftCardScreen(
+        child: const _i3.CheckoutScreen(),
+      );
+    },
+    FullGiftCardRoute.name: (routeData) {
+      final args = routeData.argsAs<FullGiftCardRouteArgs>();
+      return _i8.AutoRoutePage<bool>(
+        routeData: routeData,
+        child: _i4.FullGiftCardScreen(
           key: args.key,
           giftCard: args.giftCard,
         ),
       );
     },
     Home.name: (routeData) {
-      return _i7.AutoRoutePage<dynamic>(
+      return _i8.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i4.HomeScreen(),
+        child: const _i5.HomeScreen(),
       );
     },
     Riddles.name: (routeData) {
-      return _i7.AutoRoutePage<dynamic>(
+      return _i8.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i5.RiddlesScreen(),
+        child: const _i6.RiddlesScreen(),
       );
     },
     Root.name: (routeData) {
-      return _i7.AutoRoutePage<dynamic>(
+      return _i8.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i6.Root(),
+        child: const _i7.Root(),
       );
     },
   };
@@ -69,8 +77,8 @@ abstract class $AppRouter extends _i7.RootStackRouter {
 
 /// generated route for
 /// [_i1.EmptyHomePage]
-class EmptyHomePage extends _i7.PageRouteInfo<void> {
-  const EmptyHomePage({List<_i7.PageRouteInfo>? children})
+class EmptyHomePage extends _i8.PageRouteInfo<void> {
+  const EmptyHomePage({List<_i8.PageRouteInfo>? children})
       : super(
           EmptyHomePage.name,
           initialChildren: children,
@@ -78,65 +86,79 @@ class EmptyHomePage extends _i7.PageRouteInfo<void> {
 
   static const String name = 'EmptyHomePage';
 
-  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
+  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i2.CheckoutScreen]
-class Checkout extends _i7.PageRouteInfo<void> {
-  const Checkout({List<_i7.PageRouteInfo>? children})
+/// [_i2.WelcomeScreen]
+class WelcomeRoute extends _i8.PageRouteInfo<void> {
+  const WelcomeRoute({List<_i8.PageRouteInfo>? children})
       : super(
-          Checkout.name,
+          WelcomeRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'Checkout';
+  static const String name = 'WelcomeRoute';
 
-  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
+  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i3.FullGiftCardScreen]
-class Full_gift_card extends _i7.PageRouteInfo<Full_gift_cardArgs> {
-  Full_gift_card({
-    _i8.Key? key,
-    required _i9.GiftCard giftCard,
-    List<_i7.PageRouteInfo>? children,
+/// [_i3.CheckoutScreen]
+class CheckoutRoute extends _i8.PageRouteInfo<void> {
+  const CheckoutRoute({List<_i8.PageRouteInfo>? children})
+      : super(
+          CheckoutRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CheckoutRoute';
+
+  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i4.FullGiftCardScreen]
+class FullGiftCardRoute extends _i8.PageRouteInfo<FullGiftCardRouteArgs> {
+  FullGiftCardRoute({
+    _i9.Key? key,
+    required _i10.GiftCard giftCard,
+    List<_i8.PageRouteInfo>? children,
   }) : super(
-          Full_gift_card.name,
-          args: Full_gift_cardArgs(
+          FullGiftCardRoute.name,
+          args: FullGiftCardRouteArgs(
             key: key,
             giftCard: giftCard,
           ),
           initialChildren: children,
         );
 
-  static const String name = 'Full_gift_card';
+  static const String name = 'FullGiftCardRoute';
 
-  static const _i7.PageInfo<Full_gift_cardArgs> page =
-      _i7.PageInfo<Full_gift_cardArgs>(name);
+  static const _i8.PageInfo<FullGiftCardRouteArgs> page =
+      _i8.PageInfo<FullGiftCardRouteArgs>(name);
 }
 
-class Full_gift_cardArgs {
-  const Full_gift_cardArgs({
+class FullGiftCardRouteArgs {
+  const FullGiftCardRouteArgs({
     this.key,
     required this.giftCard,
   });
 
-  final _i8.Key? key;
+  final _i9.Key? key;
 
-  final _i9.GiftCard giftCard;
+  final _i10.GiftCard giftCard;
 
   @override
   String toString() {
-    return 'Full_gift_cardArgs{key: $key, giftCard: $giftCard}';
+    return 'FullGiftCardRouteArgs{key: $key, giftCard: $giftCard}';
   }
 }
 
 /// generated route for
-/// [_i4.HomeScreen]
-class Home extends _i7.PageRouteInfo<void> {
-  const Home({List<_i7.PageRouteInfo>? children})
+/// [_i5.HomeScreen]
+class Home extends _i8.PageRouteInfo<void> {
+  const Home({List<_i8.PageRouteInfo>? children})
       : super(
           Home.name,
           initialChildren: children,
@@ -144,13 +166,13 @@ class Home extends _i7.PageRouteInfo<void> {
 
   static const String name = 'Home';
 
-  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
+  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i5.RiddlesScreen]
-class Riddles extends _i7.PageRouteInfo<void> {
-  const Riddles({List<_i7.PageRouteInfo>? children})
+/// [_i6.RiddlesScreen]
+class Riddles extends _i8.PageRouteInfo<void> {
+  const Riddles({List<_i8.PageRouteInfo>? children})
       : super(
           Riddles.name,
           initialChildren: children,
@@ -158,13 +180,13 @@ class Riddles extends _i7.PageRouteInfo<void> {
 
   static const String name = 'Riddles';
 
-  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
+  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i6.Root]
-class Root extends _i7.PageRouteInfo<void> {
-  const Root({List<_i7.PageRouteInfo>? children})
+/// [_i7.Root]
+class Root extends _i8.PageRouteInfo<void> {
+  const Root({List<_i8.PageRouteInfo>? children})
       : super(
           Root.name,
           initialChildren: children,
@@ -172,5 +194,5 @@ class Root extends _i7.PageRouteInfo<void> {
 
   static const String name = 'Root';
 
-  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
+  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
 }

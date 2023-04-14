@@ -8,7 +8,7 @@ import 'package:giftie_app/views/root/components/checkout_button.dart';
 import 'package:giftie_app/views/riddles/riddles_screen.dart';
 import 'package:provider/provider.dart';
 
-@RoutePage(name: "root")
+@RoutePage()
 class Root extends StatelessWidget {
   const Root({super.key});
 
