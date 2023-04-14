@@ -1,10 +1,12 @@
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:giftie_app/shared/theme/custom_color_scheme/app_color_scheme.dart';
 import 'package:giftie_app/views/checkout/components/done_button.dart';
 import 'package:giftie_app/views/checkout/components/order_list.dart';
 
-class Checkout extends StatelessWidget {
-  const Checkout({
+@RoutePage(name: 'checkout')
+class CheckoutScreen extends StatelessWidget {
+  const CheckoutScreen({
     super.key,
   });
 

@@ -1,11 +1,14 @@
+import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:giftie_app/providers/riddle_section_provider.dart';
 import 'package:giftie_app/shared/theme/custom_color_scheme/app_color_scheme.dart';
 import 'package:giftie_app/views/riddles/components/answer.dart';
 import 'package:provider/provider.dart';
 
-class Settings extends StatelessWidget {
-  const Settings({super.key});
+@RoutePage(name: 'riddles')
+class RiddlesScreen extends StatelessWidget {
+  const RiddlesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

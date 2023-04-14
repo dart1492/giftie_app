@@ -4,5 +4,5 @@ import 'package:hive_flutter/adapters.dart';
 
 void main() async {
   await Hive.initFlutter();
-  runApp(const App());
+  runApp(App());
 }

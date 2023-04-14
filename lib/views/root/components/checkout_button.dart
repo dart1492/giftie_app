@@ -1,7 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:giftie_app/routes/router.gr.dart' as gr;
 import 'package:giftie_app/shared/app_colors.dart';
 import 'package:giftie_app/shared/theme/custom_color_scheme/app_color_scheme.dart';
-import 'package:giftie_app/views/checkout/checkout.dart';
 
 class CheckoutButton extends StatelessWidget {
   const CheckoutButton({
@@ -20,15 +21,10 @@ class CheckoutButton extends StatelessWidget {
         horizontal: 20,
         vertical: 10,
       ),
-      backgroundColor: colors.background,
+      backgroundColor: colors.primary,
       splashColor: AppColors.opaqueGrey,
       onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const Checkout(),
-          ),
-        );
+        AutoRouter.of(context).push(const gr.Checkout());
       },
       label: Column(
         mainAxisAlignment: MainAxisAlignment.center,
